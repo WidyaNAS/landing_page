@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Rak Premium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8f8;
+            color: #333;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .headline {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .subheadline {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #888;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .description {
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+
+        .options {
+            margin: 20px 0;
+        }
+
+        .options button {
+            display: block;
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            background-color: #fff;
+            border: 2px solid #ff6600;
+            color: #333;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .options button:hover {
+            background-color: #ff6600;
+            color: #fff;
+        }
+ /* Animation for bouncing arrow */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .arrow {
+            font-size: 3em;
+            color: #ff6600;
+            animation: bounce 1s infinite;
+        }
+        .cta {
+            margin-top: 20px;
+        }
+
+        .cta img {
+            width: 120px;
+        }
+
+        .cta button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+/* Image Slider */
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .cta button:hover {
+            background-color: #e65c00;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="headline">Solusi Elegan untuk Hunian Yang Lebih Berkelas</h1>
+        <p class="subheadline">Cuma pasang ini 👇</p>
+        
+        <div class="image-container">
+            <img src="images/1.jpg" alt="Plafon PVC">
+        </div>
+
+        <div class="description">
+            <p><strong>TUNGGU SEBENTAR...</strong></p>
+            <p>Kenapa harus Plavfon PVC ??</p>
+        </div>
+
+        <div class="options">
+            <button>Tahan air dan anti bocor</button>
+            <button>Mudah dibersihkan</button>
+            <button>Ringan dan mudah dipasang</button>
+	    <button>Banyak Pilihan Motif</button>
+        </div>
+
+        <div class="cta">
+            <p>HASIL PEMASANGAN</p>
+
+             <!-- Image Slider Section -->
+        <div class="slider">
+            <div class="slides">
+                <img src="images/2.jpeg" alt="1">
+                <img src="images/3.jpeg" alt="2">
+                <img src="images/4.jpeg" alt="3">
+            </div>
+            <!-- Next and Previous Buttons -->
+            <a class="prev" onclick="moveSlides(-1)">&#10094;</a>
+            <a class="next" onclick="moveSlides(1)">&#10095;</a>
+        </div>
+            <br>
+<!-- Bouncing arrow before CTA section -->
+        <div class="arrow">⬇️</div>
+            <button>Klik disini untuk Ambil Promo</button>
+        </div>
+
+    </div>
+  <script>
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = slides.children.length;
+
+        function moveSlides(direction) {
+            currentIndex += direction;
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            }
+            slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+
+        // Optional: Auto slide every 3 seconds
+        setInterval(() => {
+            moveSlides(1);
+        }, 3000);
+    </script>
+</body>
+</html>
